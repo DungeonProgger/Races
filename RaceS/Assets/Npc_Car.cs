@@ -11,14 +11,20 @@ public class Npc_Car : MonoBehaviour
     public WheelCollider[] backCol;
     public Transform[] dataBack;   
     public Transform target;
-    private float TimeStart = 5f;
+    private float TimeStart = 1f;
+    public Transform[] Points;
     UnityEngine.AI.NavMeshAgent agent;
 
     public float maxSpeed = 400f;
     private float sideSpeed = 30f;
+    public float distanceToChangePoint;
+    int currentPoint = -1;
 
     void Start() {
         gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.destination = Points[0].position;
+
     }
 
 
@@ -31,13 +37,25 @@ public class Npc_Car : MonoBehaviour
         float vAxis = Input.GetAxis("Vertical");
         float hAxis = Input.GetAxis("Horizontal");
 
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        
 
-        if (TimeStart <= 0)
+        if (TimeStart <= 0 && currentPoint != Points.Length)
         {
             agent.enabled = true;
-            agent.SetDestination(target.position);
         }
+        if (agent.remainingDistance < distanceToChangePoint)
+        {
+            currentPoint++;
+            if (currentPoint == Points.Length)
+            {
+                agent.enabled = false;
+            }
+            agent.destination = Points[currentPoint].position;
+        }
+
+
+
+
         //frontCols[0].motorTorque = vAxis * maxSpeed;
         //frontCols[1].motorTorque = vAxis * maxSpeed;
 
