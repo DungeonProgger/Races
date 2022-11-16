@@ -6,13 +6,13 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
 
-    public WheelCollider[] frontCols;
-    public Transform[] dataFront;
-    public WheelCollider[] backCol;
-    public Transform[] dataBack;
-    public Rigidbody rb;
+    [SerializeField] private WheelCollider[] frontCols;
+    [SerializeField] private Transform[] dataFront;
+    [SerializeField] private WheelCollider[] backCol;
+    [SerializeField] private Transform[] dataBack;
+    [SerializeField] private Rigidbody rb;
 
-    public float maxSpeed = 400f;
+    [SerializeField] private float maxSpeed = 400f;
     private float sideSpeed = 30f;
 
 

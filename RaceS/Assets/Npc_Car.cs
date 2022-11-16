@@ -6,28 +6,26 @@ using UnityEngine;
 public class Npc_Car : MonoBehaviour
 {
 
-    public WheelCollider[] frontCols;
-    public Transform[] dataFront;
-    public WheelCollider[] backCol;
-    public Transform[] dataBack;   
-    public Transform target;
+    [SerializeField] private WheelCollider[] frontCols;
+    [SerializeField] private Transform[] dataFront;
+    [SerializeField] private WheelCollider[] backCol;
+    [SerializeField] private Transform[] dataBack;
+    [SerializeField] private Transform target;
     private float TimeStart = 1f;
-    public Transform[] Points;
+    [SerializeField] private Transform[] Points;
     UnityEngine.AI.NavMeshAgent agent;
 
-    public float maxSpeed = 400f;
+    [SerializeField] private float maxSpeed = 400f;
     private float sideSpeed = 30f;
-    public float distanceToChangePoint;
+    [SerializeField] private float distanceToChangePoint;
     int currentPoint = -1;
 
-    void Start() {
+    void Start() 
+    {
         gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = Points[0].position;
-
     }
-
-
 
     void Update()
     {
@@ -36,8 +34,6 @@ public class Npc_Car : MonoBehaviour
 
         float vAxis = Input.GetAxis("Vertical");
         float hAxis = Input.GetAxis("Horizontal");
-
-        
 
         if (TimeStart <= 0 && currentPoint != Points.Length)
         {
@@ -51,16 +47,7 @@ public class Npc_Car : MonoBehaviour
                 agent.enabled = false;
             }
             agent.destination = Points[currentPoint].position;
-        }
-
-
-
-
-        //frontCols[0].motorTorque = vAxis * maxSpeed;
-        //frontCols[1].motorTorque = vAxis * maxSpeed;
-
-        //frontCols[0].steerAngle = hAxis * sideSpeed;
-        //frontCols[1].steerAngle = hAxis * sideSpeed;
+        }      
 
         dataFront[0].Rotate(-frontCols[0].rpm * Time.deltaTime, 0, 0);
         dataFront[1].Rotate(-frontCols[1].rpm * Time.deltaTime, 0, 0);
