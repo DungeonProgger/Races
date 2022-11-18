@@ -25,7 +25,7 @@ public class Car : MonoBehaviour
        
         frontCols[0].motorTorque = vAxis * maxSpeed;
         frontCols[1].motorTorque = vAxis * maxSpeed;
-       
+        //UnityEngine.Debug.Log(vAxis);
         if (Input.GetKeyDown(KeyCode.Space))
         {       
             rb.drag = 1f;                      
