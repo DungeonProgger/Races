@@ -421,6 +421,7 @@
 "Assets/Oculus/SampleFramework/Editor/BuildSamples.cs"
 "Assets/Oculus/SampleFramework/Editor/OculusSampleFrameworkUtil.cs"
 "Assets/Oculus/SampleFramework/Usage/OVROverlayCanvas/Editor/OVROverlayCanvasEditor.cs"
+"Assets/PolygonPi/FenceLayout/Editor/FenceLayoutEditor.cs"
 -langversion:9.0
 
 /deterministic

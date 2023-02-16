@@ -398,7 +398,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VoiceSDK.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VoiceSDK.Runtime.ref.dll"
 "Assets/Car.cs"
+"Assets/FinishMenu.cs"
+"Assets/FinishText.cs"
+"Assets/GameManagerScript.cs"
 "Assets/Invisibility.cs"
+"Assets/Minimap.cs"
 "Assets/Npc_Car.cs"
 "Assets/Oculus/SampleFramework/Core/CustomHands/Scripts/Hand.cs"
 "Assets/Oculus/SampleFramework/Core/CustomHands/Scripts/HandPose.cs"
@@ -532,6 +536,8 @@
 "Assets/Oculus/SampleFramework/Usage/TouchPro/Scripts/Ui/UiSceneMenu.cs"
 "Assets/Oculus/SampleFramework/Usage/TouchPro/Scripts/Ui/UiVectorInspector.cs"
 "Assets/Oculus/Voice/Lib/Wit.ai/AssemblyInfo.cs"
+"Assets/PolygonPi/FenceLayout/FenceLayout.cs"
+"Assets/Speedometer.cs"
 -langversion:9.0
 
 /deterministic
